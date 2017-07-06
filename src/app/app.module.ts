@@ -4,13 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
+
 import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './shared/auth.guard';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent
+    SignInComponent,
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -20,10 +28,23 @@ import { SignInComponent } from './sign-in/sign-in.component';
       {
         path: 'sign-in',
         component: SignInComponent
+      },
+      {
+        path: 'home',
+        component: HomeComponent,
+        canActivate: [ AuthGuard ]
+      },
+      {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
       }
     ])
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,7 +2,7 @@
   <div class="row ">
     <div class="col-md-12">
       <div class="sign-in">
-        <form class="sign-in__form" (ngSubmit)='userLogin()' #signIn="ngForm">
+        <form class="sign-in__form" (ngSubmit)='userLogin($event)' (keypress)='userLogin($event)' #signIn="ngForm">
           <i class="sign-in__icon fa fa-users" aria-hidden="true"></i>
           <div class="sign-in__err-message" [class.sign-in__err-message_visible]='!correctState'>
             <i class="sign-in__err-icon fa fa-times-circle" aria-hidden="true"></i>
@@ -10,7 +10,7 @@
           </div>
           <label class="sign-in__field">
             <span class="sign-in__field-name">Login</span>
-            <input type="text" class="sign-in__input" placeholder='Login' required name='login' [(ngModel)]='login'>
+            <input type="text" class="sign-in__input" placeholder='Login' required name='login' [(ngModel)]='login' autofocus>
           </label>
           <label class="sign-in__field">
             <span class="sign-in__field-name">Password</span>

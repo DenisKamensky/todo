@@ -1,0 +1,18 @@
+@import "../../assets/common-styles/variables";
+.app-header{
+  background-color: $green;
+  color: $black;
+  font-weight: bold;
+  box-shadow: 0px 5px 5px rgba(0,0,0,.3);
+  &__link{
+    color: $black;
+    transition: all .3s;
+    &:hover{
+      color: $yellow;
+    }
+  }
+}
+.user-link{
+  font-size: 30px;
+  float: right;
+}
