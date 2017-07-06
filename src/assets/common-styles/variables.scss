@@ -1,0 +1,26 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+$error-red: #e61610;
+$black: #000;
+$green: #72bb53;
+@mixin placeholder($color){
+  &::-webkit-input-placeholder{
+    opacity: 1;
+    color: $color;
+  }
+  &::-moz-placeholder{
+    opacity: 1;
+    color: $color;
+  }
+  &:-ms-input-placeholder{
+    opacity: 1;
+    color: $color;
+  }
+  &:-moz-placeholder{
+    opacity: 1;
+    color: $color;
+  }
+  &::placeholder{
+    opacity: 1;
+    color: $color;
+  }
+}

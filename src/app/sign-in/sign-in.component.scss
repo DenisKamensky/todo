@@ -1,0 +1,68 @@
+@import "../../assets/common-styles/variables";
+@mixin focus{
+  &:focus{
+    outline: none;
+    border-color: $green;
+    box-shadow: 0px 0px 3px rgba($black, 10%);
+  }
+}
+.sign-in{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__form{
+    width: 420px;
+    max-width: 100%;
+    border: solid 1px $black;
+    padding: 40px 100px 75px;
+  }
+  &__icon{
+    display: block;
+    text-align: center;
+    font-size: 4.642857142857143rem;
+  }
+  &__err-message{
+    margin: 20px 0;
+    color: $error-red;
+    text-align: center;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    transform-origin: center top;
+    transform: rotateX(90deg);
+    transition: all .3s;
+    &_visible{
+      transform: rotateX(0deg);
+    }
+  }
+  &__err-icon{
+    font-size: 1.7142857142857142em;
+    margin-right: 10px;
+  }
+  &__field{
+    display: block;
+    margin-bottom: 10px;
+  }
+  &__field-name{
+    display: block;
+    margin-bottom: 5px;
+  }
+  &__input{
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border: solid 1px $black;
+    @include placeholder(#c0c3d1);
+    @include focus;
+  }
+  &__submit{
+    width: 110px;
+    margin: 25px auto 0;
+    display: block;
+    background-color: $green;
+    color: #fff;
+    border: 1px solid $black;
+    @include focus;
+  }
+}

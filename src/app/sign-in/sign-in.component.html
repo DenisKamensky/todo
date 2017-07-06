@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row ">
+    <div class="col-md-12">
+      <div class="sign-in">
+        <form class="sign-in__form" (ngSubmit)='userLogin()' #signIn="ngForm">
+          <i class="sign-in__icon fa fa-users" aria-hidden="true"></i>
+          <div class="sign-in__err-message" [class.sign-in__err-message_visible]='!correctState'>
+            <i class="sign-in__err-icon fa fa-times-circle" aria-hidden="true"></i>
+            <span class="sign-in__err-text">Incorrect login or password</span>
+          </div>
+          <label class="sign-in__field">
+            <span class="sign-in__field-name">Login</span>
+            <input type="text" class="sign-in__input" placeholder='Login' required name='login' [(ngModel)]='login'>
+          </label>
+          <label class="sign-in__field">
+            <span class="sign-in__field-name">Password</span>
+            <input type="password" class="sign-in__input" placeholder='Password' required name='password' [(ngModel)]='password'>
+          </label>
+          <button class="sign-in__submit" [disabled]='signIn.form.invalid'>Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
