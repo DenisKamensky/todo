@@ -16,6 +16,9 @@
     max-width: 100%;
     border: solid 1px $black;
     padding: 40px 100px 75px;
+    @media only screen and(max-width: 500px){
+      padding: 20px 50px 37px;
+    }
   }
   &__icon{
     display: block;
