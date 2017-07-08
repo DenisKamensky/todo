@@ -16,16 +16,7 @@ export class SignInComponent implements OnInit {
   ngOnInit() {
   }
   userLogin(event){
-
-      // if(this.login === 'user' && this.password == 'password' || this.login === 'admin' && this.password == 'password'){
-      //     //send login data
-      //     this.correctState = true;
-      //     this._router.navigate(['home']);
-      // }else{
-      //   this.correctState = false;
-      //}
       this.correctState = this._authService.getAuth(this.login, this.password, event, this.correctState);
-
   }
 
 }

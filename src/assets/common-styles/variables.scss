@@ -5,6 +5,7 @@ $error-red: #e61610;
 $yellow: #fefb64;
 $black: #000;
 $green: #72bb53;
+$grey: #d1d1d1;
 @mixin placeholder($color){
   &::-webkit-input-placeholder{
     opacity: 1;

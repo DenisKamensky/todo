@@ -1,0 +1,40 @@
+@import "../../assets/common-styles/variables";
+.home-filter{
+  padding: {
+    top: 24px;
+    bottom: 24px;
+  };
+  &__form{
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    &::before{
+      content: "\f002";
+      font-family: 'FontAwesome';
+      position: absolute;
+      top: 1px;
+      bottom: 0;
+      left: 0;
+      display: inline-block;
+      left: 7px;
+      margin: auto;
+      z-index: 2;
+      font-size: .8rem;
+      line-height: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  &__input{
+    border-radius: 1em;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    font-size: .8rem;
+    line-height: 1.5rem;
+    padding-left: 24px;
+    border: solid 1px $grey;
+    &:focus{
+      outline: none;
+    }
+  }
+}

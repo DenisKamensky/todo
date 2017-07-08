@@ -4,15 +4,40 @@
   color: $black;
   font-weight: bold;
   box-shadow: 0px 5px 5px rgba(0,0,0,.3);
+  &__navigation{
+    padding: {
+      top: 5px;
+      bottom: 5px;
+    };
+    min-height: 40px;
+  }
   &__link{
     color: $black;
     transition: all .3s;
+    display: inline-block;
+    min-height: 30px;
+    line-height: 30px;
+    text-decoration: none !important;
+    margin-right: 10px;
+    &:last-of-type{
+      margin-right: 0;
+    }
     &:hover{
       color: $yellow;
     }
+  }
+  &__link-text{
+    font-size: 1.2rem;
+    text-transform: capitalize;
   }
 }
 .user-link{
   font-size: 30px;
   float: right;
+
+}
+.home-link{
+  &__icon{
+    font-size: 1rem;
+  }
 }

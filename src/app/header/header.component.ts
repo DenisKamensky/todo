@@ -6,18 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  homePage: boolean = false;
+  isAdmin :boolean = JSON.parse(localStorage.getItem('currentUser')).isAdmin;
   constructor() { }
 
   ngOnInit() {
-    this.currentPage()
-  }
-  currentPage(): void{
-    if(location.pathname.indexOf('/home')){
-      this.homePage = true;
-    }else{
-      this.homePage = false;
-    }
+
   }
 
 }

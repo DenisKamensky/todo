@@ -10,7 +10,11 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthService } from './auth.service';
+import { HomeProjectService } from './home-project.service';
 import { AuthGuard } from './shared/auth.guard';
+import { HomeProjectsComponent } from './home-projects/home-projects.component';
+import { HomeProjectsFilterComponent } from './home-projects-filter/home-projects-filter.component';
+import { ProjectFilterPipe } from './progect-filter.pipe';
 
 
 @NgModule({
@@ -18,7 +22,10 @@ import { AuthGuard } from './shared/auth.guard';
     AppComponent,
     SignInComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeProjectsComponent,
+    HomeProjectsFilterComponent,
+    ProjectFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -43,6 +50,7 @@ import { AuthGuard } from './shared/auth.guard';
   ],
   providers: [
     AuthService,
+    HomeProjectService,
     AuthGuard
   ],
   bootstrap: [AppComponent]

@@ -8,7 +8,6 @@ export class AuthGuard implements CanActivate{
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot){
     let cache = localStorage.getItem('currentUser');
     if(cache){
-      console.log('ok')
       return true;
     }else{
       this._router.navigate(['sign-in']);

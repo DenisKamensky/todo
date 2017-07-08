@@ -1,4 +1,5 @@
 <app-header></app-header>
-<p>
-  home works!
-</p>
+<main>
+    <app-home-projects-filter (searchChange)='translateQuery($event)'></app-home-projects-filter>
+    <app-home-projects [projectName]='query'></app-home-projects>
+</main>
