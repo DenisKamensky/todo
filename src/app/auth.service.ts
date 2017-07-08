@@ -32,5 +32,7 @@ export class AuthService {
       return true
     }
   }
-
+  getCurrentUserRole(): boolean{
+    return JSON.parse(localStorage.getItem('currentUser')).isAdmin;
+  }
 }

@@ -1,0 +1,10 @@
+<div class="add-project-block">
+  <div class="backface" (click)='cancel()'></div>
+  <form class="add-project" (submit)='createProject()' #addProjectForm='ngForm'>
+  <div class="add-project__buttons">
+    <button type='submit' class='add-project__button' [disabled]='addProjectForm.form.invalid'>add</button>
+    <button type='reset' (click)='cancel()' class='add-project__button'>cancel</button>
+  </div>
+    <input type="text" [(ngModel)]='taskName' name='taskName' placeholder= 'Project name' class='add-project__input' maxlength="15" required>
+  </form>
+  </div>

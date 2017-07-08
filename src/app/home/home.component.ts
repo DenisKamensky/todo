@@ -6,12 +6,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   query: string = '';
+  modal: boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
   translateQuery(value: string){
     this.query = value;
+  }
+  loadModal(){
+    this.modal = true
+  }
+  onClose(){
+    this.modal = false;
   }
 
 }

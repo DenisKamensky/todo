@@ -5,6 +5,7 @@
         <form class="home-filter__form" (keyup)="setQuery()">
           <input class="home-filter__input" type="text" placeholder='Search project...' autofocus [(ngModel)]='query' name='searchQuery' maxlength="15">
         </form>
+        <i class="add-project-btn fa fa-plus-circle" aria-hedden='true' *ngIf='isAdmin' (click)='onAddProject()'></i>
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 <app-header></app-header>
 <main>
-    <app-home-projects-filter (searchChange)='translateQuery($event)'></app-home-projects-filter>
+    <app-home-projects-filter (searchChange)='translateQuery($event)' (addProject)='loadModal()'></app-home-projects-filter>
     <app-home-projects [projectName]='query'></app-home-projects>
+    <app-add-project *ngIf='modal' (closeForm)="onClose()"></app-add-project>
 </main>

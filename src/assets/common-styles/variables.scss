@@ -6,6 +6,7 @@ $yellow: #fefb64;
 $black: #000;
 $green: #72bb53;
 $grey: #d1d1d1;
+$grey-buttons: #e2e2e2;
 @mixin placeholder($color){
   &::-webkit-input-placeholder{
     opacity: 1;
