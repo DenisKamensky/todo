@@ -10,7 +10,7 @@ export class ProjectFilterPipe implements PipeTransform {
       return projects
     }else{
       return projects.filter((project)=>{
-        if(project.name.indexOf(projectName) != -1){
+        if(project.name.toLowerCase().indexOf(projectName.toLowerCase()) != -1){
           return project;
         }
       });
