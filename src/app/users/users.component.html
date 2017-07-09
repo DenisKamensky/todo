@@ -1,4 +1,8 @@
 <app-header></app-header>
-<p>
-  users works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-user-filter (userSearch)='onUserSearch($event)'></app-user-filter>
+    </div>
+  </div>
+</div>

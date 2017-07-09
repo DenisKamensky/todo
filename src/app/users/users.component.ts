@@ -11,5 +11,7 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onUserSearch(event){
+    console.log(event)
+  }
 }

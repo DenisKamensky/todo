@@ -1,0 +1,8 @@
+<form>
+  <input type="text" placeholder="Search..." [(ngModel)]='searchBy' name='searchBy' (keyup)='changeQuery()'>
+  <select name="role" [(ngModel)]='role' (change)='changeQuery()'>
+    <option selected value="All">All</option>
+    <option value="User">User</option>
+    <option value="Admin">Admin</option>
+  </select>
+</form>

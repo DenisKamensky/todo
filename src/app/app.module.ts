@@ -18,6 +18,8 @@ import { ProjectFilterPipe } from './progect-filter.pipe';
 import { ProjectComponent } from './project/project.component';
 import { AddProjectComponent } from './add-project/add-project.component';
 import { UsersComponent } from './users/users.component';
+import { UserFilterComponent } from './user-filter/user-filter.component';
+import { UserFilterPipe } from './user-filter.pipe';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { UsersComponent } from './users/users.component';
     ProjectFilterPipe,
     ProjectComponent,
     AddProjectComponent,
-    UsersComponent
+    UsersComponent,
+    UserFilterComponent,
+    UserFilterPipe
   ],
   imports: [
     BrowserModule,
