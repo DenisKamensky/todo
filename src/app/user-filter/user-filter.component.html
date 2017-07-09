@@ -1,8 +1,9 @@
 <form class='user-filter'>
-  <input type="text" placeholder="Search..." [(ngModel)]='searchBy' name='searchBy' (keyup)='changeQuery()' class='user-filter__input' autofocus>
+  <input type="text" placeholder="Search..." [(ngModel)]='searchBy' name='searchBy' (keyup)='changeQuery()' class='user-filter__input' autofocus maxlength="15">
   <select name="role" [(ngModel)]='role' (change)='changeQuery()' class='user-filter__select'>
     <option selected value="All">All</option>
     <option value="User">User</option>
     <option value="Admin">Admin</option>
   </select>
 </form>
+<i class="add-user fa fa-plus-circle" aria-hidden="true" (click)='addUser()'></i>

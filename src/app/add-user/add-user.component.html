@@ -1,0 +1,18 @@
+<div class="add-user-block">
+  <div class="backface" (click)='cancel()'></div>
+  <form class="add-user" (submit)='createUser()' (keyup.enter)='createUser()' #addUserForm='ngForm'>
+  <div class="add-user__buttons">
+    <button type='submit' class='add-user__button' [disabled]='addUserForm.form.invalid'>add</button>
+    <button type='reset' (click)='cancel()' class='add-user__button'>cancel</button>
+  </div>
+    <input type="text" [(ngModel)]='userFirstName' name='userFirstName' placeholder= 'First name' class='add-user__input' maxlength="15" required>
+    <input type="text" [(ngModel)]='userLastName' name='userLastName' placeholder= 'Last name' class='add-user__input' maxlength="15" required>
+    <input type="text" [(ngModel)]='userLogin' name='userLogin' placeholder= 'Login' class='add-user__input' maxlength="15" required>
+    <input type="password" [(ngModel)]='userPassword' name='userPassword' placeholder= 'Password' class='add-user__input' maxlength="15" required>
+    <input type="password" [(ngModel)]='userConfirmPassword' (keyup)='checkPswd()' name='userConfirmPassword' placeholder= 'Confirm password' class='add-user__input' maxlength="15" required>
+    <select name="userRole" [(ngModel)]='userRole' class='add-user__select'>
+      <option value="0" selected>User</option>
+      <option value="1">Admin</option>
+    </select>
+  </form>
+</div>

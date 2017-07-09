@@ -10,6 +10,8 @@ export class UserFilterComponent implements OnInit {
   searchBy: string;
   @Output()
   userSearch = new EventEmitter();
+  @Output()
+  newUser = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -19,6 +21,9 @@ export class UserFilterComponent implements OnInit {
       searchBy: this.searchBy,
       role: this.role
     });
+  }
+  addUser(){
+    this.newUser.emit();
   }
 
 }

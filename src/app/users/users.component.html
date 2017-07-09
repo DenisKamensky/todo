@@ -2,8 +2,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-user-filter (userSearch)='onUserSearch($event)'></app-user-filter>
+      <app-user-filter (userSearch)='onUserSearch($event)' (newUser)='modalUser()'></app-user-filter>
     </div>
   </div>
 </div>
 <app-user-list [searchQueryBy]='searchBy'></app-user-list>
+<app-add-user *ngIf='modal' (canselAdd)='closeModal()'></app-add-user>

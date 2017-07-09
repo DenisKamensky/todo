@@ -38,4 +38,9 @@ export class AuthService {
   getUsers():User[]{
     return users;
   }
+  addUser(name:string, lastName: string, login: string, psw: string, role:string){
+    let isAdmin:boolean = parseInt(role) ? true : false;
+    let newUser = new User(name, lastName, login, psw, isAdmin);
+    this.users.push(newUser);
+  }
 }

@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { AuthService } from './auth.service';
 import { HomeProjectService } from './home-project.service';
 import { AuthGuard } from './shared/auth.guard';
+import { AdminGuard } from './shared/admin.guard';
 import { HomeProjectsComponent } from './home-projects/home-projects.component';
 import { HomeProjectsFilterComponent } from './home-projects-filter/home-projects-filter.component';
 import { ProjectFilterPipe } from './progect-filter.pipe';
@@ -21,6 +22,7 @@ import { UsersComponent } from './users/users.component';
 import { UserFilterComponent } from './user-filter/user-filter.component';
 import { UserFilterPipe } from './user-filter.pipe';
 import { UserListComponent } from './user-list/user-list.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { UserListComponent } from './user-list/user-list.component';
     UsersComponent,
     UserFilterComponent,
     UserFilterPipe,
-    UserListComponent
+    UserListComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,11 @@ import { UserListComponent } from './user-list/user-list.component';
       },
       {
         path: 'users',
-        component: UsersComponent
+        component: UsersComponent,
+        canActivate: [
+          AdminGuard,
+          AuthGuard
+        ]
       },
       {
         path: '',
@@ -72,7 +79,8 @@ import { UserListComponent } from './user-list/user-list.component';
   providers: [
     AuthService,
     HomeProjectService,
-    AuthGuard
+    AuthGuard,
+    AdminGuard
   ],
   bootstrap: [AppComponent]
 })

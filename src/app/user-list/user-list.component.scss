@@ -9,20 +9,16 @@
   border-bottom: solid 2px $black;
   padding-bottom: 20px;
   margin-bottom: 20px;
+  &::after{
+    content: '';
+    display: table;
+    clear: both;
+  }
   &__icon{
     font-size: 24px;
     color: $dark-green;
     &_admin{
       color: $orange;
-    }
-  }
-  &__link{
-    color: $black;
-    text-decoration: none !important;
-    &::after{
-      content: '';
-      clear: both;
-      display: table;
     }
   }
   &__icon-box{
@@ -44,6 +40,11 @@
   }
   &__text-value{
     text-transform: capitalize;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    max-width: 40%;
   }
   &__text_role{
     font-weight: bold;

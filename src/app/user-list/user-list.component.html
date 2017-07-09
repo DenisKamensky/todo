@@ -1,11 +1,7 @@
-<p>
-  user-list works!
-  {{searchQueryBy}}
-</p>
 <div class="container">
   <ul class="row users-list">
     <li class="col-md-12 users-list__item user-list-item" *ngFor="let user of users | userFilter:searchQueryBy">
-      <a href="#" class="user-list-item__link">
+
         <div class="user-list-item__icon-box">
           <i class="user-list-item__icon fa fa-user-circle" *ngIf='!user.isAdmin' aria-hidden="true"></i>
           <i class="user-list-item__icon user-list-item__icon_admin fa fa-user-circle" *ngIf='user.isAdmin' aria-hidden="true"></i>
@@ -26,7 +22,7 @@
             <span class="user-list-item__text-value">{{user.secondName}}</span>
           </p>
         </div>
-      </a>
+
 
     </li>
   </ul>
