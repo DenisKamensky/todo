@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-
+  searchBy;
   constructor() { }
 
   ngOnInit() {
   }
   onUserSearch(event){
-    console.log(event)
+    this.searchBy = event;
   }
 }
