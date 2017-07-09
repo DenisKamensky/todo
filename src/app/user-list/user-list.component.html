@@ -2,3 +2,32 @@
   user-list works!
   {{searchQueryBy}}
 </p>
+<div class="container">
+  <ul class="row users-list">
+    <li class="col-md-12 users-list__item user-list-item" *ngFor="let user of users | userFilter:searchQueryBy">
+      <a href="#" class="user-list-item__link">
+        <div class="user-list-item__icon-box">
+          <i class="user-list-item__icon fa fa-user-circle" *ngIf='!user.isAdmin' aria-hidden="true"></i>
+          <i class="user-list-item__icon user-list-item__icon_admin fa fa-user-circle" *ngIf='user.isAdmin' aria-hidden="true"></i>
+        </div>
+        <div class="user-list-item__text-container">
+          <p class="user-list-item__text user-list-item__text_role" *ngIf='!user.isAdmin'>User</p>
+          <p class="user-list-item__text user-list-item__text_role user-list-item__text_role_admin" *ngIf='user.isAdmin'>Admin</p>
+          <p class="user-list-item__text">
+            <span class="user-list-item__text-key">Login</span>
+            <span class="user-list-item__text-value">{{user.login}}</span>
+          </p>
+          <p class="user-list-item__text">
+            <span class="user-list-item__text-key">First Name</span>
+            <span class="user-list-item__text-value">{{user.name}}</span>
+          </p>
+          <p class="user-list-item__text">
+            <span class="user-list-item__text-key">Last Name</span>
+            <span class="user-list-item__text-value">{{user.secondName}}</span>
+          </p>
+        </div>
+      </a>
+
+    </li>
+  </ul>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { User } from '../shared/user'
 
 @Component({
   selector: 'app-user-list',
@@ -8,10 +10,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class UserListComponent implements OnInit {
   @Input()
   searchQueryBy;
-  constructor() { }
+  users:User [];
+  constructor(private _authService: AuthService ) { }
 
   ngOnInit() {
-
+    this.getUsers();
+  }
+  getUsers(){
+    this.users= this._authService.getUsers();
   }
 
 }

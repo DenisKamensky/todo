@@ -1,0 +1,19 @@
+@import "../../assets/common-styles/variables";
+.user-filter{
+  display: inline-block;
+  margin: 20px 0;
+  &__input,&__select{
+    display: inline-block;
+    width: 200px;
+    max-width: 100%;
+    &:focus{
+      outline: none;
+    }
+  }
+  &__input{
+    border-radius: 5px;
+    border: $grey 1px solid;
+    padding: 0 5px;
+    @include placeholder($grey-placeholder);
+  }
+}

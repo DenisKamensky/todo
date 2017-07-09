@@ -7,6 +7,9 @@ $black: #000;
 $green: #72bb53;
 $grey: #d1d1d1;
 $grey-buttons: #e2e2e2;
+$orange: #ffa834;
+$dark-green: #629c44;
+$grey-placeholder:  #7a7a7a;
 @mixin placeholder($color){
   &::-webkit-input-placeholder{
     opacity: 1;

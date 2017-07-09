@@ -1,6 +1,6 @@
-<form>
-  <input type="text" placeholder="Search..." [(ngModel)]='searchBy' name='searchBy' (keyup)='changeQuery()'>
-  <select name="role" [(ngModel)]='role' (change)='changeQuery()'>
+<form class='user-filter'>
+  <input type="text" placeholder="Search..." [(ngModel)]='searchBy' name='searchBy' (keyup)='changeQuery()' class='user-filter__input' autofocus>
+  <select name="role" [(ngModel)]='role' (change)='changeQuery()' class='user-filter__select'>
     <option selected value="All">All</option>
     <option value="User">User</option>
     <option value="Admin">Admin</option>

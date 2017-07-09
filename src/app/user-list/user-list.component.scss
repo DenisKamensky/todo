@@ -1,0 +1,55 @@
+@import "../../assets/common-styles/variables";
+.users-list{
+  margin: 0 -15px;
+  list-style: none;
+  padding: 0;
+
+}
+.user-list-item{
+  border-bottom: solid 2px $black;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  &__icon{
+    font-size: 24px;
+    color: $dark-green;
+    &_admin{
+      color: $orange;
+    }
+  }
+  &__link{
+    color: $black;
+    text-decoration: none !important;
+    &::after{
+      content: '';
+      clear: both;
+      display: table;
+    }
+  }
+  &__icon-box{
+    display: inline-block;
+    width: 24px;
+    float: left;
+  }
+  &__text-container{
+    width: calc(100% - 24px);
+    display: block;
+    float: left;
+    padding: 2px 10px;
+  }
+  &__text-key{
+    display: inline-block;
+    min-width: 125px;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  &__text-value{
+    text-transform: capitalize;
+  }
+  &__text_role{
+    font-weight: bold;
+    color: $dark-green;
+    &_admin{
+      color: $orange;
+    }
+  }
+}

@@ -7,5 +7,12 @@ export const users: User[] = [
     login: 'jhon@doe',
     psw: 'jhon@doe',
     isAdmin: true
+  },
+  {
+    name: 'Jane',
+    secondName: 'Jhonson',
+    login: 'jane@jhonson',
+    psw: 'jane@jhonson',
+    isAdmin: false
   }
 ]
