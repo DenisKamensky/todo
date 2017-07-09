@@ -17,6 +17,7 @@ import { HomeProjectsFilterComponent } from './home-projects-filter/home-project
 import { ProjectFilterPipe } from './progect-filter.pipe';
 import { ProjectComponent } from './project/project.component';
 import { AddProjectComponent } from './add-project/add-project.component';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AddProjectComponent } from './add-project/add-project.component';
     HomeProjectsFilterComponent,
     ProjectFilterPipe,
     ProjectComponent,
-    AddProjectComponent
+    AddProjectComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +51,10 @@ import { AddProjectComponent } from './add-project/add-project.component';
         path: 'project/:id',
         component: ProjectComponent,
         canActivate: [ AuthGuard ]
+      },
+      {
+        path: 'users',
+        component: UsersComponent
       },
       {
         path: '',
