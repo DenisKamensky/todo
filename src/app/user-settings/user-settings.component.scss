@@ -60,9 +60,21 @@
     box-sizing: border-box;
     width: calc(100% - 108px);
     display: inline-block;
+    font-weight: normal;
+    border: 1px solid $grey;
+    &:focus{
+      outline: none;
+      border: 1px solid $green;
+    }
   }
   &__field-password-value{
     width: 100%;
     margin-bottom: 20px;
+    &_invalid{
+      border-color: $error-red;
+      &:focus{
+        border-color: $error-red;
+      }
+    }
   }
 }

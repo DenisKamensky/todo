@@ -20,7 +20,7 @@ export class AuthService {
       if(matchUser){
         localStorage.setItem('currentUser', JSON.stringify({
           isAdmin:  matchUser.isAdmin,
-          login: matchUser.login
+          id: matchUser.id
         }));
         this._router.navigate(['home']);
         return true;
@@ -41,15 +41,34 @@ export class AuthService {
   }
   addUser(name:string, lastName: string, login: string, psw: string, role:string){
     let isAdmin:boolean = parseInt(role) ? true : false;
-    let newUser = new User(name, lastName, login, psw, isAdmin);
+    let lastId = this.users[this.users.length-1].id;
+    let id = ++lastId;
+    let newUser = new User(name, lastName, login, psw, isAdmin, id);
     this.users.push(newUser);
   }
   getCurrentUser(){
-    let login: string = JSON.parse(localStorage.getItem('currentUser')).login;
+    let id: string = JSON.parse(localStorage.getItem('currentUser')).id;
     let currentUser = users.find((user)=>{
-      return user.login == login;
+      return user.id == +id;
     });
-    console.log(currentUser)
     return currentUser;
+  }
+  changeUser(login: string, name: string, lastName: string, psw: string, id: number){
+    return new Promise((resolve,reject)=>{
+      for(let i = 0; i<users.length; i++){
+        if(users[i].id == id){
+          try{
+            let tempUser = users[i];
+            tempUser.name = name;
+            tempUser.login = login;
+            tempUser.secondName = lastName;
+            tempUser.psw = psw;
+            resolve();
+          }catch(e){
+            reject();
+          }
+        }
+      }
+    })
   }
 }

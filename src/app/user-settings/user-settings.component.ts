@@ -12,6 +12,11 @@ export class UserSettingsComponent implements OnInit {
   login: string;
   firstName: string;
   lastName: string;
+  oldPsw: string;
+  printedOldPsw: string;
+  newPsw: string;
+  confirmNewPsw: string;
+  id: number = +JSON.parse(localStorage.getItem('currentUser')).id;
   constructor(private _location: Location, private _authService: AuthService) { }
 
   ngOnInit() {
@@ -19,11 +24,41 @@ export class UserSettingsComponent implements OnInit {
    this.login = response.login;
    this.firstName = response.name;
    this.lastName = response.secondName;
+   this.oldPsw = response.psw;
   }
   cancel(){
     this._location.back();
   }
   getCurrentUser(){
    return  this._authService.getCurrentUser();
+  }
+  checkOldPsw(){
+    let pswInput = document.querySelector('input[name="oldPsw"]');
+    if(this.printedOldPsw.length >= this.oldPsw.length && this.printedOldPsw != this.oldPsw){
+      pswInput.classList.add('user-settings__field-password-value_invalid');
+    }else if(this.printedOldPsw.length < this.oldPsw.length){
+      pswInput.classList.remove('user-settings__field-password-value_invalid');
+    }else if(this.printedOldPsw.length == this.oldPsw.length && this.printedOldPsw == this.oldPsw){
+      pswInput.classList.remove('user-settings__field-password-value_invalid');
+    }
+  }
+  confirmPsw(){
+    let newPsw = document.querySelector('input[name="newPsw"]');
+    let confirmNewPsw = document.querySelector('input[name="confirmNewPsw"]');
+    let submit = document.querySelector('button[type="submit"]');
+    if(this.confirmNewPsw != this.newPsw){
+      newPsw.classList.add('user-settings__field-password-value_invalid');
+      confirmNewPsw.classList.add('user-settings__field-password-value_invalid');
+      submit.setAttribute('disabled','true');
+    }else{
+      newPsw.classList.remove('user-settings__field-password-value_invalid');
+      confirmNewPsw.classList.remove('user-settings__field-password-value_invalid');
+      submit.removeAttribute('disabled');
+    }
+  }
+  changeUser(){
+    this._authService.changeUser(this.login, this.firstName, this.lastName , this.newPsw, this.id)
+      .then(()=>{console.log('success')})
+      .catch(()=>{console.log('fail')})
   }
 }

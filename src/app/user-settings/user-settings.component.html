@@ -1,5 +1,5 @@
 <app-header></app-header>
-<form class='user-settings' #userSettings='ngForm'>
+<form class='user-settings' #userSettings='ngForm' (submit)='changeUser()'>
   <div class="container">
     <div class="row">
       <div class="col-md-12 user-settings__buttons">
@@ -25,9 +25,9 @@
           <div class="user-settings__password">
             <span class='user-settings__field-key'>Password</span>
             <span class='user-settings__fields-password'>
-              <input type="password" maxlength="15" [(ngModel)]='oldPsw' name='oldPsw' required class="user-settings__field-password-value" placeholder='Enter password'>
+              <input type="password" maxlength="15" [(ngModel)]='printedOldPsw' (keyup)='checkOldPsw()' name='oldPsw' required class="user-settings__field-password-value" placeholder='Enter password'>
               <input type="password" maxlength="15" [(ngModel)]='newPsw' name='newPsw' required class="user-settings__field-password-value" placeholder='Enter new password'>
-              <input type="password" maxlength="15" required [(ngModel)]='confirmNewPsw' name='confirmNewPsw' class="user-settings__field-password-value" placeholder='Re-enter new password'>
+              <input type="password" maxlength="15" required [(ngModel)]='confirmNewPsw' name='confirmNewPsw' (keyup)='confirmPsw()' class="user-settings__field-password-value" placeholder='Re-enter new password'>
             </span>
           </div>
         </div>
