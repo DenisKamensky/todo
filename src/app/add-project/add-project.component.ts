@@ -19,7 +19,7 @@ export class AddProjectComponent implements OnInit {
     this.closeForm.emit();
   }
   createProject(){
-    this._homeProjectService.createTask(this.taskName)
+    this._homeProjectService.createProject(this.taskName)
     this.taskName = '';
     this.closeForm.emit();
   }

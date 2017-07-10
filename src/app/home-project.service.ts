@@ -9,11 +9,15 @@ export class HomeProjectService {
   getHomeProjects(){
     return this.projects
   }
-  createTask(taskName: string){
+  createProject(projectName: string){
     let projects = this.projects;
     let lastId: number = projects[projects.length-1].id;
     let currentId:number = ++lastId;
-    let newProject:iProject = new Project(taskName, currentId);
+    let newProject:iProject = new Project(projectName, currentId);
     projects.push(newProject);
+  }
+  getCurrentProject(id:number){
+    let curProject: iProject =  projects.find((project)=>{return project.id == id});
+    return curProject;
   }
 }

@@ -73,7 +73,8 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
       },
       {
         path: 'user-settings',
-        component: UserSettingsComponent
+        component: UserSettingsComponent,
+        canActivate: [ AuthGuard ]
       },
       {
         path: '',

@@ -1,7 +1,8 @@
+import { Task } from './task'
 export interface iProject{
   name: string,
   id: number,
-  tasks?: any[],
+  tasks?: Task [],
 }
 
 export class Project implements iProject{
