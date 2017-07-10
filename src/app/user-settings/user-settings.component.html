@@ -1,12 +1,36 @@
 <app-header></app-header>
-<form>
+<form class='user-settings' #userSettings='ngForm'>
   <div class="container">
     <div class="row">
-      <div class="col-md-2 col-md-offset-8">
-        <button type="submit"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+      <div class="col-md-12 user-settings__buttons">
+        <button type="submit" [disabled]='userSettings.form.invalid' class='user-settings__button user-settings__button_save'> <i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+        <button type="button" (click)='cancel()' class='user-settings__button user-settings__button_cancel'> <i class="fa fa-times-circle-o" aria-hidden="true"></i> Cancel</button>
       </div>
-      <div class="col-md-2">
-        <button type="button" (click)='cancel()'> <i class="fa fa-times-circle-o" aria-hidden="true"></i> Cancel</button>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="user-settings__fields">
+          <label class="user-settings__field">
+            <span class="user-settings__field-key">Login</span>
+            <input type="text" [(ngModel)]='login' name='login' maxlength="15" required class="user-settings__field-value">
+          </label>
+          <label class="user-settings__field">
+            <span class="user-settings__field-key">First name</span>
+            <input type="text" [(ngModel)]='firstName' name='FirstName' maxlength="15" required class="user-settings__field-value">
+          </label>
+          <label class="user-settings__field">
+            <span class="user-settings__field-key">Last name</span>
+            <input type="text" [(ngModel)]='lastName' name='LastName' maxlength="15" required class="user-settings__field-value">
+          </label>
+          <div class="user-settings__password">
+            <span class='user-settings__field-key'>Password</span>
+            <span class='user-settings__fields-password'>
+              <input type="password" maxlength="15" [(ngModel)]='oldPsw' name='oldPsw' required class="user-settings__field-password-value" placeholder='Enter password'>
+              <input type="password" maxlength="15" [(ngModel)]='newPsw' name='newPsw' required class="user-settings__field-password-value" placeholder='Enter new password'>
+              <input type="password" maxlength="15" required [(ngModel)]='confirmNewPsw' name='confirmNewPsw' class="user-settings__field-password-value" placeholder='Re-enter new password'>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </div>

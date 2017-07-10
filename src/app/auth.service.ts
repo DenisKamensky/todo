@@ -44,4 +44,12 @@ export class AuthService {
     let newUser = new User(name, lastName, login, psw, isAdmin);
     this.users.push(newUser);
   }
+  getCurrentUser(){
+    let login: string = JSON.parse(localStorage.getItem('currentUser')).login;
+    let currentUser = users.find((user)=>{
+      return user.login == login;
+    });
+    console.log(currentUser)
+    return currentUser;
+  }
 }

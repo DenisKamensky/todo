@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common'
+import { Location } from '@angular/common';
+import { AuthService } from '../auth.service';
+import { User } from '../shared/user';
 
 @Component({
   selector: 'app-user-settings',
@@ -7,12 +9,21 @@ import { Location } from '@angular/common'
   styleUrls: ['./user-settings.component.scss']
 })
 export class UserSettingsComponent implements OnInit {
-
-  constructor(private _location: Location) { }
+  login: string;
+  firstName: string;
+  lastName: string;
+  constructor(private _location: Location, private _authService: AuthService) { }
 
   ngOnInit() {
+  let response: User =   this.getCurrentUser();
+   this.login = response.login;
+   this.firstName = response.name;
+   this.lastName = response.secondName;
   }
   cancel(){
     this._location.back();
+  }
+  getCurrentUser(){
+   return  this._authService.getCurrentUser();
   }
 }
