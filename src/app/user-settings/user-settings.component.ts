@@ -16,7 +16,9 @@ export class UserSettingsComponent implements OnInit {
   printedOldPsw: string;
   newPsw: string;
   confirmNewPsw: string;
+  modal: boolean = false;
   id: number = +JSON.parse(localStorage.getItem('currentUser')).id;
+  status: string = '';
   constructor(private _location: Location, private _authService: AuthService) { }
 
   ngOnInit() {
@@ -57,8 +59,20 @@ export class UserSettingsComponent implements OnInit {
     }
   }
   changeUser(){
+
+    let self = this;
     this._authService.changeUser(this.login, this.firstName, this.lastName , this.newPsw, this.id)
-      .then(()=>{console.log('success')})
-      .catch(()=>{console.log('fail')})
+      .then(()=>{
+        console.log(1)
+        self.modal = true,
+        self.status = 'User settings was succsessfully changed';
+       })
+      .catch(()=>{
+        self.modal = true,
+        self.status = 'Somthing wrong... please update this page, and try again'
+      })
+  }
+  closeModal(){
+    this.modal = false;
   }
 }

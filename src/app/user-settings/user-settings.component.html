@@ -35,3 +35,10 @@
     </div>
   </div>
 </form>
+<div class="modal-status" *ngIf='modal'>
+  <div class="modal-status__backface" (click)='closeModal()'></div>
+  <div class="modal-status__body">
+    <i class="fa fa-times-circle-o modal-status__close" aria-hidden="true" (click)='closeModal()'></i>
+    {{status}}
+  </div>
+</div>

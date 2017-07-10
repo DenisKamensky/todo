@@ -4,6 +4,10 @@
     text-align: right;
     padding: 20px 0;
     margin-bottom: 100px;
+    @media only screen and (max-width: 776px){
+      text-align: center;
+      margin-bottom: 20px;
+    }
   }
   &__button{
     display: inline-block;
@@ -34,6 +38,17 @@
     }
     &:last-of-type{
       margin-left: -4px;
+    }
+    @media only screen and (max-width: 400px){
+      &:last-of-type{
+        margin: {
+          left: auto;
+          right: auto;
+          bottom: 0;
+        };
+      }
+      display: block;
+      margin: 0 auto 20px;
     }
   }
   &__fields{
@@ -76,5 +91,45 @@
         border-color: $error-red;
       }
     }
+  }
+}
+.modal-status{
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  &__backface{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,.3);
+  }
+  &__body{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+  }
+  &__close{
+    font-size: 20px;
+    display: block;
+    height: 20px;
+    width: 20px;
+    right: -10px;
+    top: -10px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    cursor: pointer;
   }
 }
