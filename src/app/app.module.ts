@@ -23,6 +23,7 @@ import { UserFilterComponent } from './user-filter/user-filter.component';
 import { UserFilterPipe } from './user-filter.pipe';
 import { UserListComponent } from './user-list/user-list.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { AddUserComponent } from './add-user/add-user.component';
     UserFilterComponent,
     UserFilterPipe,
     UserListComponent,
-    AddUserComponent
+    AddUserComponent,
+    UserSettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -70,9 +72,18 @@ import { AddUserComponent } from './add-user/add-user.component';
         ]
       },
       {
+        path: 'user-settings',
+        component: UserSettingsComponent
+      },
+      {
         path: '',
         redirectTo: 'home',
-        pathMatch: 'full'
+        pathMatch: 'full',
+        canActivate: [ AuthGuard ]
+      },
+      {
+        path: '**',
+        redirectTo: 'home',
       }
     ])
   ],

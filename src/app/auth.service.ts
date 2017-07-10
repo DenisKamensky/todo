@@ -19,7 +19,8 @@ export class AuthService {
       })
       if(matchUser){
         localStorage.setItem('currentUser', JSON.stringify({
-          isAdmin:  matchUser.isAdmin
+          isAdmin:  matchUser.isAdmin,
+          login: matchUser.login
         }));
         this._router.navigate(['home']);
         return true;
