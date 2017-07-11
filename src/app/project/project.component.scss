@@ -1,0 +1,24 @@
+@import "../../assets/common-styles/variables";
+.project-name{
+  font-weight: bold;
+  text-transform: capitalize;
+  display: inline-block;
+  font-size: 1.4rem;
+}
+.admin-buttons{
+  display: inline-block;
+  float: right;
+  padding: 10px 0;
+  font-size: 20px;
+  &__button{
+    display: inline-block;
+    cursor: pointer;
+    transition: all .3s;
+    &:hover{
+      color: $orange;
+    }
+    &:first-of-type{
+      margin-right: 10px;
+    }
+  }
+}
