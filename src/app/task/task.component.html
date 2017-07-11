@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-12">
       <h1 class='task__name'>{{task.name}}</h1>
-      <i class="fa fa-pencil task__add-comment" aria-hidden="true"></i>
+      <i class="fa fa-pencil task__add-comment" aria-hidden="true" (click)='showModal()'></i>
     </div>
   </div>
   <div class="row">
@@ -21,4 +21,14 @@
   <div class="row">
     <app-task-comments [comment]='comment' *ngFor='let comment of task.comments'></app-task-comments>
   </div>
+</div>
+<div class="add-comment-block" *ngIf='modal'>
+  <div class="backface" (click)='cancel()'></div>
+  <form class="add-comment" (submit)='addComment()' (keyup.enter)='addComment()' #addCommentForm='ngForm'>
+  <div class="add-comment__buttons">
+    <button type='submit' class='add-comment__button' [disabled]='addCommentForm.form.invalid'>add</button>
+    <button type='reset' (click)='cancel()' class='add-comment__button'>cancel</button>
+  </div>
+    <textarea name="commentText" [(ngModel)]='commentText' placeholder='Your comment' class='add-comment__input' maxlength="150" required></textarea>
+  </form>
 </div>

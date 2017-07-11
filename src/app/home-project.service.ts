@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { projects } from './shared/mock-projects'
 import { Project, iProject } from './shared/project';
 import { Task } from './shared/task';
+import { Comment } from './shared/coment';
+
 
 @Injectable()
 export class HomeProjectService {
@@ -47,5 +49,12 @@ export class HomeProjectService {
       return task.id == taskId
     })
     return curTask;
+  }
+  addComment( taskId: number, userId: number ,projectId: number, commentText: string){
+    let date = Date.now();
+    let newComment: Comment = new Comment(userId, commentText, date);
+    let curTask = this.getCurrentTask(projectId, taskId);
+    curTask.comments.push(newComment);
+
   }
 }

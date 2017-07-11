@@ -15,6 +15,9 @@ export class TaskComponent implements OnInit {
   parentId: number;
   private sub: any;
   task: Task;
+  modal: boolean = false;
+  commentText: string = '';
+  userId: number;
 
   constructor(private _route: ActivatedRoute, private _homeProjectService: HomeProjectService, private _authService: AuthService ) { }
 
@@ -24,6 +27,7 @@ export class TaskComponent implements OnInit {
       this.id = +params['id']; // (+) converts string 'id' to a number
     });
     this.getCurrentTask();
+    this.getUserId();
   }
   ngOnDestroy() {
     this.sub.unsubscribe();
@@ -31,5 +35,17 @@ export class TaskComponent implements OnInit {
   getCurrentTask(){
     this.task = this._homeProjectService.getCurrentTask(this.parentId, this.id);
   }
-
+  showModal(){
+    this.modal = true;
+  }
+  cancel(){
+    this.modal = false;
+  }
+  addComment(){
+    this._homeProjectService.addComment( this.id, this.userId ,this.parentId, this.commentText);
+    this.commentText = '';
+  }
+  getUserId(){
+    this.userId = this._authService.getCurrentUser().id
+  }
 }

@@ -41,6 +41,8 @@ export class ProjectComponent implements OnInit, OnDestroy {
   }
   addTask(){
     this._homeProjectService.createTask(this.id, this.taskName, this.taskDescr);
+    this.taskName = '';
+    this.taskDescr = '';
   }
   cancel(){
     this.taskModal = false;

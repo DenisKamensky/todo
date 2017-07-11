@@ -21,7 +21,7 @@
 </div>
 <div class="add-task-modal" *ngIf='taskModal'>
   <div class="add-task-modal__backface" (click)="cancel()"></div>
-  <form class="add-task" (submit)='addTask()' (keyup.enter)='createTask()' #addTaskForm='ngForm'>
+  <form class="add-task" (submit)='addTask()' (keyup.enter)='addTask()' #addTaskForm='ngForm'>
     <div class="add-task__buttons">
       <button type='submit' class='add-task__button' [disabled]='addTaskForm.form.invalid'>add</button>
       <button type='reset' (click)='cancel()' class='add-task__button'>cancel</button>
