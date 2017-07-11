@@ -23,8 +23,8 @@
   <div class="add-task-modal__backface" (click)="cancel()"></div>
   <form class="add-task" (submit)='addTask()' (keyup.enter)='addTask()' #addTaskForm='ngForm'>
     <div class="add-task__buttons">
-      <button type='submit' class='add-task__button' [disabled]='addTaskForm.form.invalid'>add</button>
-      <button type='reset' (click)='cancel()' class='add-task__button'>cancel</button>
+      <button type='submit' class='add-task__button add-task__button_save' [disabled]='addTaskForm.form.invalid'>add</button>
+      <button type='reset' (click)='cancel()' class='add-task__button add-task__button_cancel'>cancel</button>
     </div>
     <input type="text" [(ngModel)]='taskName' name='taskName' placeholder='Task name' class='add-task__input' maxlength="15" required>
     <textarea name="taskDescr" [(ngModel)]="taskDescr" placeholder='Task description' class='add-task__input add-task__input_descr' maxlength='180' required></textarea>

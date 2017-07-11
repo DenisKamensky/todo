@@ -41,7 +41,6 @@ export class HomeProjectService {
       curProject.tasks = [];
       curProject.tasks.push(newTask);
     }
-    console.log(curProject)
   }
   getCurrentTask(parentId: number, taskId: number): Task{
     let curProject: iProject =  projects.find((project)=>{return project.id == parentId});

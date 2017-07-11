@@ -26,8 +26,8 @@
   <div class="backface" (click)='cancel()'></div>
   <form class="add-comment" (submit)='addComment()' (keyup.enter)='addComment()' #addCommentForm='ngForm'>
   <div class="add-comment__buttons">
-    <button type='submit' class='add-comment__button' [disabled]='addCommentForm.form.invalid'>add</button>
-    <button type='reset' (click)='cancel()' class='add-comment__button'>cancel</button>
+    <button type='submit' class='add-comment__button add-comment__button_save' [disabled]='addCommentForm.form.invalid'>save</button>
+    <button type='reset' (click)='cancel()' class='add-comment__button add-comment__button_cancel'>cancel</button>
   </div>
     <textarea name="commentText" [(ngModel)]='commentText' placeholder='Your comment' class='add-comment__input' maxlength="150" required></textarea>
   </form>

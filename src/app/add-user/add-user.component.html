@@ -2,8 +2,8 @@
   <div class="backface" (click)='cancel()'></div>
   <form class="add-user" (submit)='createUser()' (keyup.enter)='createUser()' #addUserForm='ngForm'>
   <div class="add-user__buttons">
-    <button type='submit' class='add-user__button' [disabled]='addUserForm.form.invalid'>add</button>
-    <button type='reset' (click)='cancel()' class='add-user__button'>cancel</button>
+    <button type='submit' class='add-user__button add-user__button_save' [disabled]='addUserForm.form.invalid'>add</button>
+    <button type='reset' (click)='cancel()' class='add-user__button add-user__button_cancel'>cancel</button>
   </div>
     <input type="text" [(ngModel)]='userFirstName' name='userFirstName' placeholder= 'First name' class='add-user__input' maxlength="15" required>
     <input type="text" [(ngModel)]='userLastName' name='userLastName' placeholder= 'Last name' class='add-user__input' maxlength="15" required>

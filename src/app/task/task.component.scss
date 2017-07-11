@@ -65,6 +65,13 @@
     background-color: $grey-buttons;
     text-align: center;
     border-radius: 5px;
+    color: #fff;
+    &_save{
+      background-color: $green;
+    }
+    &_cancel{
+      background-color: $error-red;
+    }
     &:first-of-type{
       margin-right: 10px;
     }
