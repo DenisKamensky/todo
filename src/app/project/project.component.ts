@@ -14,6 +14,8 @@ export class ProjectComponent implements OnInit, OnDestroy {
   project: iProject;
   isAdmin: boolean = false;
   taskModal: boolean = false;
+  taskName: string;
+  taskDescr: string;
   private sub: any;
   constructor(private _route: ActivatedRoute, private _homeProjectService: HomeProjectService, private _authService: AuthService) { }
 
@@ -38,6 +40,9 @@ export class ProjectComponent implements OnInit, OnDestroy {
     this.taskModal = true;
   }
   addTask(){
-
+    this._homeProjectService.createTask(this.id, this.taskName, this.taskDescr);
+  }
+  cancel(){
+    this.taskModal = false;
   }
 }

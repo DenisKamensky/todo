@@ -20,12 +20,13 @@
   </div>
 </div>
 <div class="add-task-modal" *ngIf='taskModal'>
-  <div class="add-task-modal__backface"></div>
-  <form class="add-task" (submit)='createUser()' (keyup.enter)='createUser()' #addUserForm='ngForm'>
-      <div class="add-task__buttons">
-        <button type='submit' class='add-task__button' [disabled]='addUserForm.form.invalid'>add</button>
-        <button type='reset' (click)='cancel()' class='add-task__button'>cancel</button>
-      </div>
+  <div class="add-task-modal__backface" (click)="cancel()"></div>
+  <form class="add-task" (submit)='addTask()' (keyup.enter)='createTask()' #addTaskForm='ngForm'>
+    <div class="add-task__buttons">
+      <button type='submit' class='add-task__button' [disabled]='addTaskForm.form.invalid'>add</button>
+      <button type='reset' (click)='cancel()' class='add-task__button'>cancel</button>
+    </div>
     <input type="text" [(ngModel)]='taskName' name='taskName' placeholder='Task name' class='add-task__input' maxlength="15" required>
+    <textarea name="taskDescr" [(ngModel)]="taskDescr" placeholder='Task description' class='add-task__input add-task__input_descr' maxlength='180' required></textarea>
   </form>
 </div>
