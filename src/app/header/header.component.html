@@ -2,6 +2,10 @@
   <div class="container">
     <div class="row">
       <nav class="col-md-12 app-header__navigation">
+        <a [routerLink]="['/project',projectId]" class="app-header__link" *ngIf='onTaskPage'>
+          <i class="home-link__icon fa fa-arrow-left" aria-hedden='true'></i>
+          <span class="app-header__link-text">{{project.name}}</span>
+        </a>
         <a routerLink='/home' class="home-link app-header__link">
           <i class="home-link__icon fa fa-home" aria-hedden='true'></i>
           <span class="app-header__link-text">home</span>

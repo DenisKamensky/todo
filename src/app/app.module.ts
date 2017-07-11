@@ -24,6 +24,7 @@ import { UserFilterPipe } from './user-filter.pipe';
 import { UserListComponent } from './user-list/user-list.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { TaskComponent } from './task/task.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
     UserFilterPipe,
     UserListComponent,
     AddUserComponent,
-    UserSettingsComponent
+    UserSettingsComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +63,11 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
       {
         path: 'project/:id',
         component: ProjectComponent,
+        canActivate: [ AuthGuard ]
+      },
+      {
+        path: 'task/:parentId/:id',
+        component: TaskComponent,
         canActivate: [ AuthGuard ]
       },
       {

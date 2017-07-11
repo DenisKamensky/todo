@@ -10,7 +10,8 @@ export const projects: iProject[] = [
         id: 0,
         description: 'Bacon ipsum dolor amet sirloin strip steak kevin ribeye. Hamburger sirloin jerky drumstick brisket meatball filet mignon ham hock, pork belly tail shoulder biltong capicola ball tip. Meatloaf landjaeger meatball flank, pork chop drumstick cow jerky leberkas jowl pork belly frankfurter rump pig. Cupim boudin flank spare ribs rump, doner kevin jerky pastrami turkey meatloaf capicola.',
         comments: [],
-        date: 0
+        date: 1499778026585,
+        parentId: 0
       }
     ]
   },

@@ -13,9 +13,9 @@
 <div class="container" *ngIf='project.tasks'>
   <div class="row">
     <div class="col-md-12" *ngFor='let task of project.tasks'>
-      <div class="task">
+      <a [routerLink]="['/task', task.parentId ,task.id]" class="task">
         <i class="fa fa-list-ul task__icon" aria-hidden="true"></i> <span class='task__name'>{{task.name}}</span>
-      </div>
+      </a>
     </div>
   </div>
 </div>
