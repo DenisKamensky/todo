@@ -1,0 +1,50 @@
+@import "../../assets/common-styles/variables";
+.comment{
+  &__date{
+    text-align: right;
+  }
+  &__author{
+    display: inline-block;
+    overflow: hidden;
+    width: 170px;
+    height: 30px;
+    background-color: $comment-ath-bg;
+    border-radius: 30px;
+    vertical-align: top;
+    transition: all .3s;
+    @media only screen and (max-width: 600px){
+      width: 30px;
+    }
+  }
+  &__author-icon{
+    height: 30px;
+    display: inline-block;
+    width: 30px;
+    font-size: 1rem;
+    text-indent: 14px;
+    line-height: 27px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: $blue;
+  }
+  &__author-name{
+    display: inline-block;
+    margin-left: 10px;
+    opacity: 1;
+    transition: all .3s .2s;
+    @media only screen and (max-width: 600px){
+      visibility: hidden;
+      opacity: 0;
+
+    }
+  }
+  &__text{
+    vertical-align: top;
+    display: inline-block;
+    width: calc(100% - 190px);
+    margin-left: 10px;
+    padding-bottom: .4rem;
+    border-bottom: 1px solid $comment-ath-bg;
+    margin-bottom: 20px;
+  }
+}

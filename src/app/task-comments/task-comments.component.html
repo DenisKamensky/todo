@@ -1,0 +1,12 @@
+<div class="col-md-12 comment">
+  <p class="comment__date"> {{comment.date | date: 'dd. MM. yyyy'}}</p>
+  <div class="comment__body">
+    <div class="comment__author">
+      <div class="comment__author-icon">{{userIcon}}</div>
+      <span class="comment__author-name">{{user.name}} {{user.secondName}}</span>
+    </div>
+    <p class="comment__text">
+      {{comment.text}}
+    </p>
+  </div>
+</div>

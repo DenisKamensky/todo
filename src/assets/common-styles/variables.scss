@@ -10,6 +10,8 @@ $grey-buttons: #e2e2e2;
 $orange: #ffa834;
 $dark-green: #629c44;
 $grey-placeholder:  #7a7a7a;
+$blue: #0d47a1;
+$comment-ath-bg: #c0c0c0;
 @mixin placeholder($color){
   &::-webkit-input-placeholder{
     opacity: 1;

@@ -3,6 +3,22 @@
   <div class="row">
     <div class="col-md-12">
       <h1 class='task__name'>{{task.name}}</h1>
+      <i class="fa fa-pencil task__add-comment" aria-hidden="true"></i>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 task__body">
+      <p class="task__field">Description</p>
+      <p class="task__content">{{task.description}}</p>
+    </div>
+    <div class="col-md-12 task__body">
+      <p class="task__field">Date</p>
+      <p class="task__content">{{task.date | date: 'dd. MM. yyyy'}}</p>
+    </div>
+  </div>
+</div>
+<div class="container" *ngIf='task.comments'>
+  <div class="row">
+    <app-task-comments [comment]='comment' *ngFor='let comment of task.comments'></app-task-comments>
   </div>
 </div>

@@ -1,0 +1,27 @@
+@import "../../assets/common-styles/variables";
+.task{
+  border-bottom: 2px solid $black;
+  margin-bottom: 20px;
+  &__name{
+    font-size: 2rem;
+    text-transform: capitalize;
+    display: inline-block;
+  }
+  &__add-comment{
+    display: inline-block;
+    float: right;
+    font-size: 20px;
+    margin: 20px 5px 0;
+    cursor: pointer;
+  }
+  &__field{
+    display: inline-block;
+    min-width: 100px;
+    vertical-align: top;
+  }
+  &__content{
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 110px);
+  }
+}

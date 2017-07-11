@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Task } from '../shared/task';
+import { User } from '../shared/user';
 import { HomeProjectService } from '../home-project.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-task',
@@ -14,7 +16,7 @@ export class TaskComponent implements OnInit {
   private sub: any;
   task: Task;
 
-  constructor(private _route: ActivatedRoute, private _homeProjectService: HomeProjectService ) { }
+  constructor(private _route: ActivatedRoute, private _homeProjectService: HomeProjectService, private _authService: AuthService ) { }
 
   ngOnInit() {
     this.sub = this._route.params.subscribe(params => {

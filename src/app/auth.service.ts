@@ -71,4 +71,8 @@ export class AuthService {
       }
     })
   }
+  getCommentAuthor(id: number): User{
+    let author: User = users.find( (user)=>{ return user.id == id});
+    return author;
+  }
 }

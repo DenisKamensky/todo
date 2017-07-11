@@ -25,6 +25,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { TaskComponent } from './task/task.component';
+import { TaskCommentsComponent } from './task-comments/task-comments.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { TaskComponent } from './task/task.component';
     UserListComponent,
     AddUserComponent,
     UserSettingsComponent,
-    TaskComponent
+    TaskComponent,
+    TaskCommentsComponent
   ],
   imports: [
     BrowserModule,
