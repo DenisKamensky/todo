@@ -13,6 +13,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
   id: number;
   project: iProject;
   isAdmin: boolean = false;
+  taskModal: boolean = false;
   private sub: any;
   constructor(private _route: ActivatedRoute, private _homeProjectService: HomeProjectService, private _authService: AuthService) { }
 
@@ -32,5 +33,11 @@ export class ProjectComponent implements OnInit, OnDestroy {
   }
   getRole(){
      this.isAdmin = this._authService.getCurrentUserRole()
+  }
+  modalTask(){
+    this.taskModal = true;
+  }
+  addTask(){
+
   }
 }

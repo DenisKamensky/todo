@@ -4,9 +4,28 @@
     <div class="col-md-12">
       <h1 class="project-name">{{project.name}}</h1>
       <div class="admin-buttons" *ngIf='isAdmin'>
-        <i class="fa fa-plus-circle admin-buttons__button" aria-hidden="true"></i>
+        <i class="fa fa-plus-circle admin-buttons__button" aria-hidden="true" (click)='modalTask()'></i>
         <i class="fa fa-users admin-buttons__button" aria-hidden="true"></i>
       </div>
     </div>
   </div>
+</div>
+<div class="container" *ngIf='project.tasks'>
+  <div class="row">
+    <div class="col-md-12" *ngFor='let task of project.tasks'>
+      <div class="task">
+        <i class="fa fa-list-ul task__icon" aria-hidden="true"></i> <span class='task__name'>{{task.name}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="add-task-modal" *ngIf='taskModal'>
+  <div class="add-task-modal__backface"></div>
+  <form class="add-task" (submit)='createUser()' (keyup.enter)='createUser()' #addUserForm='ngForm'>
+      <div class="add-task__buttons">
+        <button type='submit' class='add-task__button' [disabled]='addUserForm.form.invalid'>add</button>
+        <button type='reset' (click)='cancel()' class='add-task__button'>cancel</button>
+      </div>
+    <input type="text" [(ngModel)]='taskName' name='taskName' placeholder='Task name' class='add-task__input' maxlength="15" required>
+  </form>
 </div>
