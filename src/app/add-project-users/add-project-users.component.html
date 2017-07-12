@@ -1,0 +1,17 @@
+<div class="change-user-status">
+  <div class="change-user-status__backface" (click)='cancel()'></div>
+  <form class="change-user-status__form" (submit)='saveUserStatus()' #changeUserStatus='ngForm'>
+  <div class="change-user-status__buttons">
+    <button type='submit' class='change-user-status__button change-user-status__button_save'>save</button>
+    <button type='reset' (click)='cancel()' class='change-user-status__button change-user-status__button_cancel'>cancel</button>
+  </div>
+  <div class="users-block">
+    <label *ngFor='let user of userWithStatus' class='change-user-status__label user' [ngClass]="{ 'user_check': user.projectStatus}">
+      <span class="user__name">
+        {{user.name}} {{user.secondName}}
+      </span>
+      <input type='checkbox' class='user__real-checkbox' (change)='user.projectStatus = !user.projectStatus' [checked]='user.projectStatus'>
+    </label>
+  </div>
+  </form>
+</div>

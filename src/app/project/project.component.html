@@ -5,7 +5,7 @@
       <h1 class="project-name">{{project.name}}</h1>
       <div class="admin-buttons" *ngIf='isAdmin'>
         <i class="fa fa-plus-circle admin-buttons__button" aria-hidden="true" (click)='modalTask()'></i>
-        <i class="fa fa-users admin-buttons__button" aria-hidden="true"></i>
+        <i class="fa fa-users admin-buttons__button" aria-hidden="true" (click)='showUserList()'></i>
       </div>
     </div>
   </div>
@@ -30,3 +30,4 @@
     <textarea name="taskDescr" [(ngModel)]="taskDescr" placeholder='Task description' class='add-task__input add-task__input_descr' maxlength='180' required></textarea>
   </form>
 </div>
+<app-add-project-users [project]='project' *ngIf='usersModal' (closeModal)='usersModal = false'></app-add-project-users>

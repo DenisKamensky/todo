@@ -4,6 +4,7 @@ export const projects: iProject[] = [
   {
     name: 'first',
     id: 0,
+    projectTeam: [0],
     tasks: [
       {
         name: 'lorem ipsum',
@@ -23,38 +24,47 @@ export const projects: iProject[] = [
   },
   {
     name: 'second',
-    id: 1
+    id: 1,
+    projectTeam: [0],
   },
   {
     name: 'third',
-    id: 2
+    id: 2,
+    projectTeam: [0],
   },
   {
     name: 'fourth',
-    id: 3
+    id: 3,
+    projectTeam: [0],
   },
   {
     name: 'fifth',
-    id: 4
+    id: 4,
+    projectTeam: [0],
   },
   {
     name: 'first',
-    id: 5
+    id: 5,
+    projectTeam: [0],
   },
   {
     name: 'second',
-    id: 6
+    id: 6,
+    projectTeam: [0],
   },
   {
     name: 'third',
-    id: 7
+    id: 7,
+    projectTeam: [0],
   },
   {
     name: 'fourth',
-    id: 8
+    id: 8,
+    projectTeam: [0],
   },
   {
     name: 'fifth',
-    id: 9
+    id: 9,
+    projectTeam: [0],
   }
 ];

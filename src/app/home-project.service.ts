@@ -12,11 +12,13 @@ export class HomeProjectService {
   getHomeProjects(){
     return this.projects
   }
-  createProject(projectName: string){
+  createProject(projectName: string, authorId: number){
     let projects = this.projects;
     let lastId: number = projects[projects.length-1].id;
     let currentId:number = ++lastId;
-    let newProject:iProject = new Project(projectName, currentId);
+    let teamList: number [] = [];
+    teamList.push(authorId)
+    let newProject:iProject = new Project(projectName, currentId, teamList);
     projects.push(newProject);
   }
   getCurrentProject(id:number){
@@ -55,5 +57,30 @@ export class HomeProjectService {
     let curTask = this.getCurrentTask(projectId, taskId);
     curTask.comments.push(newComment);
 
+  }
+  getUserStatusOnProject(userList, projectId: number){
+    let allUsers = userList;
+    let curProject: iProject =  projects.find((project)=>{return project.id == projectId});
+    let step: number = 0;
+    allUsers.forEach( (user)=>{
+      let userId = user.id;
+      if(curProject.projectTeam.indexOf(user.id)!=-1){
+        user.projectStatus = true;
+      }else{
+        user.projectStatus = false;
+      }
+    })
+    return allUsers;
+  }
+
+  setUserStatusOnProject(projectId: number, users: any []){
+    let curProject: iProject =  projects.find((project)=>{return project.id == projectId});
+    let newTeam = [];
+    users.forEach( (user)=>{
+      if(user.projectStatus){
+        newTeam.push(user.id)
+      }
+    });
+    curProject.projectTeam = newTeam;
   }
 }

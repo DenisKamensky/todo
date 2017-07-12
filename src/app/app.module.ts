@@ -26,6 +26,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { TaskComponent } from './task/task.component';
 import { TaskCommentsComponent } from './task-comments/task-comments.component';
+import { AddProjectUsersComponent } from './add-project-users/add-project-users.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { TaskCommentsComponent } from './task-comments/task-comments.component';
     AddUserComponent,
     UserSettingsComponent,
     TaskComponent,
-    TaskCommentsComponent
+    TaskCommentsComponent,
+    AddProjectUsersComponent
   ],
   imports: [
     BrowserModule,
